@@ -13,7 +13,6 @@ module ChatSpace
       g.javascripts false
       g.helper false
       g.test_framework false
-      #controllerを生成した際、不要なファイルを消している
     end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
