@@ -1,5 +1,15 @@
-@import "./_message_list";
+.contents{
+  height: 100%;
+  width: 100%;
 
+  .notification{
+    background-color:#38AEF0;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    color: #FFFFFF;
+  }
+}
 
   .main_contents {
     height: calc(100% - 30px);
