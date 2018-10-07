@@ -1,0 +1,54 @@
+
+  .side {
+    height: calc(100% - 30px);
+    width: 300px;
+    float: left;
+
+    &__user {
+      height: 60px;
+      width: 300px;
+      background-color: #253141;
+      color: #FFFFFF;
+      padding-top: 30px;
+
+      .user_name {
+        display: inline-block;
+        padding-left: 20px;
+        height: calc(100% - 30px);
+        font-size: 16px;
+        width: auto;
+        font-family: bold;
+        color: #ffffff;
+      }
+
+      .fas {
+        float: right;
+        color: #FFFFFF;
+        padding-right: 20px;
+        padding-top: 5px;
+        text-decoration:none;
+      }
+    }
+
+    &__group {
+      height: calc(100% - 90px);
+      background-color: #2f3e51;
+
+      .group_list {
+        .group {
+          padding: 20px;
+          color: #ffffff;
+
+          &__group_name {
+            padding-bottom: 5px;
+            font-size: 15px;
+          }
+
+          &__group_message {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
