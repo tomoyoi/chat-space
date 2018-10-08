@@ -1,7 +1,6 @@
 .contents{
   height: 100%;
   width: 100%;
-
   .notification{
     background-color:#38AEF0;
     width: 100%;
@@ -10,25 +9,21 @@
     color: #FFFFFF;
   }
 }
-
   .main_contents {
     height: calc(100% - 30px);
     width: calc(100% - 300px);
     float: right;
     position: relative;
-
       &__header {
         height: 90px;
         width: 100%;
         border: 1px solid #eeeeee;
-
         .edit {
           @include btn;
           border: 1px solid #38AEF0;
           padding: 10px 20px;
           margin: 28px 40px;
         }
-
         h3 {
           display: inline-block;
           margin: 35px 0 15px 40px;
@@ -36,7 +31,6 @@
           color: #333333;
           width: auto;
         }
-
         p {
           color: #999999;
           width: auto;
@@ -44,7 +38,6 @@
           margin: 0 40px
         }
       }
-
       .messages {
         height: calc(100% - 210px);
         width: 100%;
@@ -75,7 +68,7 @@
         .message_list {
         }
       }
-        .message_form{
+        .message_form {
           height: 50px;
           width: calc(100vw - 300px);
           background-color: #AAAAAA;
@@ -88,33 +81,33 @@
             background-color: white;
             display: inline-block;
             margin-left: 40px;
-            .message_inside{
+            .textbox {
               display: inline-block;
+              height: 50px;
+              width: calc(100% - 10px);
               color: #434A54;
               font-size: 16px;
-              padding: 15px 0 0 10px;
-            }
-            .icon {
-              float: right;
-              margin: 15px 10px 0 0;
+              padding-left: 10px;
+              .icon {
+                float: right;
+                margin: 15px 10px 0 0;
+              }
             }
         }
-
-      .send{
-        @include btn;
-        height: 40px;
-        background-color: #38AEF0;
-        font-size: 15px;
-        color: #FFFFFF;
-        padding: 5px 25px;
-        margin: 0 40px 0 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+        .send{
+          @include btn;
+          height: 40px;
+          background-color: #38AEF0;
+          font-size: 15px;
+          color: #FFFFFF;
+          padding: 5px 25px;
+          margin: 0 40px 0 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
     }
   }
-
 
 
 

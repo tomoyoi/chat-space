@@ -4,8 +4,8 @@
   .side
     .side__user
       %p.user_name サンプル
-      %i.fas.fa-edit.icon{href: "#"}
-      %i.fas.fa-cog.icon{href: "#"}
+      %i.fa.fa-edit.icon{href: "#"}
+      %i.fa.fa-cog.icon{href: "#"}
 
     .side__group
       %ul.group_list
@@ -43,8 +43,9 @@
 
 
       .message_form
-        .message
-          .message_inside Type a message
-          %i.fas.fa-images.icon
+        .form.message{:action => "/", :method => "post"}
+          .textbox{:type => "text", :placeholder => "Type a message"}
+            .form_mask
+              = fa_icon 'picture-o', class: "icon"
         %a{href: '#', class:'send'} SEND
 
