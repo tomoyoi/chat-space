@@ -43,8 +43,8 @@
 
 
       .message_form
-        .form.message{:action => "/", :method => "post"}
-          .textbox{:type => "text", :placeholder => "Type a message"}
+        .form.message{action: "/", method: "post"}
+          .textbox{type: "text", placeholder: "Type a message"}
             .form_mask
               = fa_icon 'picture-o', class: "icon"
         %a{href: '#', class:'send'} SEND
