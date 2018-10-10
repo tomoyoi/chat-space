@@ -1,6 +1,6 @@
 # README
 
-## membersテーブル
+## group_usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
@@ -28,7 +28,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|group_name|string|null: false, index: true, unique: true|
 
 ### Association
 - has_many :users, through: :members
