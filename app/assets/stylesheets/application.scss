@@ -1,12 +1,13 @@
 @import "font-awesome";
 @import "config/colors";
-@import "modules/flash";
+@import "config/font";
 @import "./reset";
 @import "./_html";
-@import "./_btn";
+@import "./_mixin";
+@import "modules/flash";
 @import "modules/user";
 @import "modules/group";
-@import "./_side";
-@import "./_main_contents";
+@import "modules/side_bar";
+@import "modules/main_contents";
 @import "./_message_list";
 
