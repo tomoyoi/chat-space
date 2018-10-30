@@ -38,5 +38,8 @@ $(function(){
       $('.message').animate({ scrollTop: $('.upper-message').offset().top}, 100 );
       $('#new_message')[0].reset();
     })
+    .fail(function(){
+      alert('error');
+    })
   })
 })
