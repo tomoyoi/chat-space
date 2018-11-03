@@ -1,3 +1,6 @@
+.side-bar
+  = render partial: 'shared/side_bar'
+
 .main_contents
   .main_contents__header
     %a{href: '#', class:'edit'} Edit
@@ -17,5 +20,3 @@
       = f.submit 'Send', class: 'form__submit'
 
 
-.side-bar
-  = render partial: 'shared/side_bar'
