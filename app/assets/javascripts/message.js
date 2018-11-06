@@ -24,7 +24,6 @@ $(document).on("turbolinks:load", function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
-    console.log(url);
     $.ajax({
       url: url,
       type: "POST",
@@ -35,7 +34,6 @@ $(document).on("turbolinks:load", function(){
     })
     .done(function(data) {
       var html = buildHTML(data);
-      console.log(html);
       $('.main_contents__content').append(html);
       $('.form__submit').prop('disabled',false);
       $('.main_contents__content').animate({scrollTop: $('.main_contents__content')[0].scrollHeight},'fast');
