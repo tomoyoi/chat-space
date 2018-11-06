@@ -1,12 +1,11 @@
-.message
+.messages
   .upper-message
     .upper-message__user-name
       = message.user.name
     .upper-message__date
-      = message.created_at
+      Time.now.to_s(:datetime)
   .lower-meesage
     - if message.content.present?
       %p.lower-message__content
         = message.content
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
-32c
