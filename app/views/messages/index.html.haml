@@ -1,6 +1,5 @@
 .side-bar
   = render partial: 'shared/side_bar'
-
 .main_contents
   .main_contents__header
     %a{href: '#', class:'edit'} Edit
@@ -8,7 +7,6 @@
     = @group.name
     %p.member_name
     = @group.users.name
-
   .main_contents__content
     = render @messages
     .form
