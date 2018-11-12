@@ -48,7 +48,6 @@ $(document).on("turbolinks:load", function(){
     var lastMessageId = $('.messages').last().attr('message-id');
     var presentHTML = window.location.href;
     if (presentHTML.match(/\/groups\/\d+\/messages/)) {
-      console.log(lastMessageId)
       $.ajax ({
         url: presentHTML,
         type: 'GET',
