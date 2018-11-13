@@ -43,6 +43,32 @@ $(document).on("turbolinks:load", function(){
       alert('error');
       $('.form__submit').prop('disabled', false);
     })
-  });
+  })
+  var interval = setInterval(function(){
+    var lastMessageId = $('.messages').last().attr('message-id');
+    var presentHTML = window.location.href;
+    if (presentHTML.match(/\/groups\/\d+\/messages/)) {
+      $.ajax ({
+        url: presentHTML,
+        type: 'GET',
+        data: {id: lastMessageId},
+        dataType: 'json',
+      })
+      .done(function(json){
+        var $messages = $('.messages');
+        var insertHTML ="";
+        json.forEach(function(messages) {
+          insertHTML += buildHTML(messages);
+          $messages.append(insertHTML);
+          $messages.animate({scrollTop: $messages[0].scrollHeight}, 'fast');
+        });
+      })
+      .fail(function() {
+        alert('');
+      })
+    } else {
+      clearInterval(interval)
+    }
+  },5000);
 });
 
