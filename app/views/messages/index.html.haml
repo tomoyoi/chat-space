@@ -6,7 +6,9 @@
     %h3.group_name
     = @group.name
     %p.member_name
-    = @group.users.name
+      MEMBERS:
+      - @group.users.each do |user|
+        = user.name
   .main_contents__content
     = render @messages
     .form

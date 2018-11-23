@@ -1,4 +1,4 @@
-$(function(){
+$(document).on("turbolinks:load", function(){
   var search_list = $("#user-search-result");
   var add_user = $("#chat-group-users");
   function appendUser(user) {
@@ -25,35 +25,36 @@ $(function(){
     </div>`
     add_user.append(html);
     }
-  $("#user-search-field").on("keyup", function(){
-    var input = $("#user-search-field").val();
-      $.ajax({
-        type: 'GET',
-        url: '/users',
-        data: { keyword: input },
-        dataType: 'json',
-      })
-      .done(function(users) {
-        $("#user-search-result").empty();
-        if (users.length !== 0) {
-          users.forEach(function(user){
-            appendUser(user);
-          });
-        }
-        else {
-          appendNoUser("一致するユーザーはいません");
-        }
+    $("#user-search-field").on("keyup", function(){
+      var input = $("#user-search-field").val();
+      console.log(input)
+        $.ajax({
+          type: 'GET',
+          url: '/users',
+          data: { keyword: input },
+          dataType: 'json',
+        })
+        .done(function(users) {
+          $("#user-search-result").empty();
+          if (users.length !== 0) {
+            users.forEach(function(user){
+              appendUser(user);
+            });
+          }
+          else {
+            appendNoUser("一致するユーザーはいません");
+          }
+        });
       });
-    });
-    $(document).on('click','.chat-group-user__btn--add',function(){
-      var user_id = $(this).attr('data-user-id');
-      var user_name = $(this).attr('data-user-name');
-      appendAddUser(user_id,user_name);
-      $(this).parent().remove();
-      $('#user-search-field').val('');
-    });
-    $(document).on('click', '.js-remove-btn', function(){
-      $(this).parent().remove();
+      $(document).on('click','.chat-group-user__btn--add',function(){
+        var user_id = $(this).attr('data-user-id');
+        var user_name = $(this).attr('data-user-name');
+        appendAddUser(user_id,user_name);
+        $(this).parent().remove();
+        $('#user-search-field').val('');
+      });
+      $(document).on('click', '.js-remove-btn', function(){
+        $(this).parent().remove();
     });
 });
 
