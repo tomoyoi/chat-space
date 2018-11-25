@@ -1,0 +1,23 @@
+.side-bar
+  = render partial: 'shared/side_bar'
+.main_contents
+  .main_contents__header
+    %a{href: '#', class:'edit'} Edit
+    %h3.group_name
+    = @group.name
+    %p.member_name
+      MEMBERS:
+      - @group.users.each do |user|
+        = user.name
+  .main_contents__content
+    = render @messages
+    .form
+      = form_for [@group, @message], html:{id: "new_content"} do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = f.file_field :image, class: 'hidden'
+            = fa_icon 'picture-o', class: 'icon'
+        = f.submit 'Send', class: 'form__submit'
+
+
